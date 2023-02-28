@@ -1,24 +1,45 @@
+// allocator_address.cpp
+// compile with: /EHsc
+#include <memory>
+#include <algorithm>
 #include <iostream>
 #include <vector>
+#include "Vectors.hpp"
 
-int main ()
+
+int main( )
 {
-    std::vector<int>    intVector;
-    std::vector<int>    pIntVector;
-    int                 size;
+   ft::vector     <int> ftIntVec;
+   ft::vector     <int> ftIntFill(10, 21);
+   ft::vector     <int> ftCopy(ftIntFill);
+   
+   
 
-    intVector.assign (10, 10);
-    size = intVector.size();
-    std::cout << "Size of vector is - " << size << std::endl;
-    for (int i = 0; i < size; ++i)
-    {
-        pIntVector.push_back(intVector[i] + i);
-        std::cout << "Value of vector [" << i << "] - " << intVector[i] << std::endl;
-    }
-    std::cout << "Understanding begin() and end() function: " << std::endl; 
-    for (auto i = pIntVector.begin(); i != pIntVector.end(); ++i) 
-        std::cout << *i << " "; 
- 
 
-    return (0);
+
+
+
+
+   return (0);
+
+
+   /*
+   std::allocator <int> myIntAlloc;
+   int   *i;
+   int   num = 10;
+
+   i = myIntAlloc.allocate(2);
+   *i = num;
+   // std::cout << "Value of i - " << i << " ." << std::endl;
+   std::cout << "Value of *i - " << *i << " ." << std::endl;
+   
+   i++;
+   *i = num + num;
+   // std::cout << "Value of i - " << i << " ." << std::endl;
+   std::cout << "Value of *i - " << *i << " ." << std::endl;
+
+   i--;
+   myIntAlloc.deallocate(i, 2);
+   */
+   
 }
